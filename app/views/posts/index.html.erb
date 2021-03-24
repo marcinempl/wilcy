@@ -1,0 +1,25 @@
+<style type="text/css">
+    .jumbotron {
+      padding: 4rem 2rem;
+      margin-bottom: 2rem;
+      background-color: var(--bs-light);
+      border-radius: .3rem;  
+    }
+</style>
+<p id="notice"><%= notice %></p>
+
+
+<div class="jumbotron">
+  <div class="display-4">
+          <% @posts.each do |post| %>
+            <h1><%= link_to post.title, post %></h1>
+            <p><%= post.body %></p>
+            <p> 
+               <%= post.author %> |
+               <%= post.category %>
+            </p>
+            <hr class="my-4">
+            
+          <% end %>
+    
+ </div>

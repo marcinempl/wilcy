@@ -1,0 +1,29 @@
+<style type="text/css">
+    .jumbotron {
+      padding: 4rem 2rem;
+      margin-bottom: 2rem;
+      background-color: var(--bs-light);
+      border-radius: .3rem;  
+    }
+</style>
+<p id="notice"><%= notice %></p>
+<div class="jumbotron">
+<p class="display-3">
+    <%= @post.title %>
+</p>
+<p class="lead">
+   <%= @post.body %>
+</p>
+
+<p>
+  <strong>Author:</strong>
+  <%= @post.author %> |
+  <strong>Category:</strong>
+  <%= @post.category %>
+</p>
+ <% if user_signed_in? %>
+<%= link_to 'Edit', edit_post_path(@post), class:"link-info" %> |
+<%= link_to 'Back', posts_path, class:"link-info" %>
+</div>
+<% end %>
+<p id="notice"><%= notice %></p>
